@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Playercontroller : MonoBehaviour
+public class playercontroller : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpHeight;
@@ -54,6 +54,7 @@ public class Playercontroller : MonoBehaviour
          
           anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
           anim.SetFloat("Height", GetComponent<Rigidbody2D>().velocity.y);
+          anim.SetBool("Grounded", isGrounded);
 
     }
 
