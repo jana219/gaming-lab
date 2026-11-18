@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            FindObjectOfType<LevelManager>().CurrentCheckPoint = this.gameObject;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,10 +22,5 @@ public class CheckPoint : MonoBehaviour
     void Update()
     {
         
-    }
-
-    void OnTriggerEneter2D (Collider2D other){
-
-        FindObjectOfType<LevelManager>().CurrentCheckPoint= this.gameObject;
     }
 }
